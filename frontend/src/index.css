@@ -1,0 +1,7 @@
+@import './styles/variables.css';
+
+/* minimal global reset */
+html, body, #root { height: 100%; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto; }
+
+a { color: inherit; }
