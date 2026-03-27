@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { Link } from 'react-router-dom'
 import '../styles/auth.css'
 import axios from 'axios';
@@ -9,6 +9,7 @@ const UserRegister = () => {
   const handleSubmit = async (e)=>{
     e.preventDefault();
 
+    
     const fullname = e.target.fullname.value;
     const email = e.target.email.value;
     const password = e.target.password.value;

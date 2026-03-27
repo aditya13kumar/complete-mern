@@ -7,11 +7,13 @@ import {useNavigate} from 'react-router-dom';
 
 
 const UserLogin = () => {
+
+  const navigate = useNavigate();
   
 
   const submithandler = async (e)=>{
     e.preventDefault();
-    const navigate = useNavigate();
+    
   
 
     const email = e.target.email.value;

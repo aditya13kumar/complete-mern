@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 
 const foodPartnerSchema = new mongoose.Schema({
-    name:{
+    businessname:{
         type:String,
         required:true
     },
@@ -15,7 +15,7 @@ const foodPartnerSchema = new mongoose.Schema({
         type:Number,
         required:true
     },
-    email:{
+    contactemail:{
         type:String,
         required:true,
         unique:true
