@@ -10,7 +10,8 @@ async function createFood(req,res){
     console.log(fileUpload);
 
     res.status(201).json({
-        message:"done baby!!"
+        message:"done baby!!",
+        data:fileUpload
     })
 
 }

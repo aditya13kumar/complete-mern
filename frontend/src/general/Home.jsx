@@ -1,11 +1,12 @@
 import React from 'react'
+import Reels from '../components/Reels'
 
-const home = () => {
+const Home = () => {
   return (
     <div>
-      <h1>Home</h1>
+      <Reels />
     </div>
   )
 }
 
-export default home
+export default Home

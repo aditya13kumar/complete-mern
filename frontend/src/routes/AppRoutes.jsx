@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom'
 import UserRegister from './UserRegister';
 import UserLogin from './UserLogin';
 import FoodPartnerRegister from './FoodPartnerRegister';
@@ -18,21 +18,30 @@ const Nav = () => (
 )
 
 const AppRoutes = () => {
-  return (
-    <BrowserRouter>
-      <Nav />
-      <main className="auth-main">
-        <Routes>
+  const Inner = () => {
+    const location = useLocation()
+    return (
+      <>
+        {location.pathname !== '/' && <Nav />}
+        <main className="auth-main">
+          <Routes>
           <Route path="/user/register" element={<UserRegister />} />
           <Route path="/user/login" element={<UserLogin />} />
           <Route path="/partner/register" element={<FoodPartnerRegister />} />
           <Route path="/partner/login" element={<FoodPartnerLogin />} />
          
           <Route path="/" element={<Home />} />
-          <Route path="/createfood" element={<CreateFood />} />
+            <Route path="/createfood" element={<CreateFood />} />
 
-        </Routes>
-      </main>
+          </Routes>
+        </main>
+      </>
+    )
+  }
+
+  return (
+    <BrowserRouter>
+      <Inner />
     </BrowserRouter>
   )
 }

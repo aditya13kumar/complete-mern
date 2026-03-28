@@ -14,8 +14,8 @@ const FoodPartnerLogin = () => {
     const businessemail = e.target.businessemail.value;
     const password = e.target.password.value;
 
-    await axios.post("http://localhost:4000/api/auth/partner/login", {
-      businessemail,
+    await axios.post("http://localhost:4000/api/auth/foodpartner/login", {
+      contactemail: businessemail,
       password
     },{withCredentials:true})
 
@@ -35,7 +35,7 @@ const FoodPartnerLogin = () => {
       <form className="auth-form" onSubmit={submithandle}>
         <div className="form-row">
           <label>Business email</label>
-          <input name='businessemail' type="email" placeholder="contact@business.com" />
+          <input name='contactemail' type="email" placeholder="contact@business.com" />
         </div>
 
         <div className="form-row">

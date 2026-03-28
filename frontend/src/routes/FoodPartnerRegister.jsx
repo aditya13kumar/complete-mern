@@ -102,7 +102,7 @@ const FoodPartnerRegister = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:4000/api/food/register/partner",
+        "http://localhost:4000/api/auth/foodpartner/register",
         {
           businessname,
           contactName,
@@ -118,7 +118,9 @@ const FoodPartnerRegister = () => {
       e.target.reset();
       navigate("/createfood");
     } catch (error) {
-      console.log("Error:", error.response?.data || error.message);
+      console.log("FULL ERROR:", error);
+      console.log("STATUS:", error.response?.status);
+      console.log("DATA:", error.response?.data);
       alert("Partner registration failed");
     }
   };
